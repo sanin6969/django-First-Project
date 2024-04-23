@@ -1,0 +1,25 @@
+{% extends "login.html" %}
+{% block content %}
+<h1 style="background-color: orange; color: black; padding: 2px;font-weight: bolder;  text-align: center;">SIGNUP</h1>
+{% if error_message %}
+<div class="alert alert-danger" role="alert">
+    {{error_message}}
+  </div>
+{% endif %}
+<form method='post'  enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="text-center m-4 p-2">
+        <label>USERNAME:</label>
+        <input type="text" name="username"/>
+        <br>
+        <br>
+        <label>PASSWORD:</label>
+        <input type="password" name="password"/>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-warning fw-bold">SIGNUP</button>
+    </div>
+</form>
+
+{% endblock content %}
+
